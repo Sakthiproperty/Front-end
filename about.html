@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sakthi Property</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/sakthi-logo-85x85.png" rel="icon">
+  <link href="assets/img/sakthi-logo-85x85.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/index.css" rel="stylesheet">
+  <link href="assets/css/navbar.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Constructo
+  * Template URL: https://bootstrapmade.com/constructo-bootstrap-construction-template/
+  * Updated: Aug 30 2025 with Bootstrap v5.3.8
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="about-page">
+
+  <div class="overlay-navigation" id="navSection">
+    <nav role="navigation">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="service-details.html">SERVICES</a></li>
+        <li><a href="blog-list.html">BLOGS</a></li>
+        <li><a href="career.html">CAREER</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="home" id="mainNavbar">
+    <!-- LOGO -->
+    <a href="index.html" class="nav-logo">
+      <img id="navbarLogo" src="/assets/img/logo.png" alt="Logo">
+    </a>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+
+      <div class="nav-item">
+        <a href="projects.html">Apartments</a>
+        <div class="dropdown">
+          <div class="dropdown-inner">
+
+            <a href="projects.html">Bangalore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="projects.html">Plots</a>
+        <div class="dropdown">
+          <a href="projects.html">Thiruvallur</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="projects.html">Farm Lands</a>
+        <div class="dropdown">
+          <a href="#">Upcoming</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- BURGER ICON -->
+    <div class="open-overlay">
+      <span class="bar-top"></span>
+      <span class="bar-middle"></span>
+      <span class="bar-bottom"></span>
+    </div>
+
+  </section>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+
+  <main class="main">
+
+    <style>
+      .company-section {
+        padding: 80px 20px;
+        background: #f9fafc;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 34px;
+        font-weight: 700;
+        color: #222;
+      }
+
+      /* Grid Layout */
+      .company-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        align-items: center;
+      }
+
+      /* Company Card */
+      .company-item {
+        background: #fff;
+        border-radius: 14px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s ease;
+        cursor: pointer;
+      }
+
+      .company-item img {
+        max-width: 140px;
+        height: auto;
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: all 0.4s ease;
+      }
+
+      /* Hover Effect */
+      .company-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .company-item:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.05);
+      }
+
+      /* ===============================
+                           RESPONSIVE DESIGN
+                        ================================= */
+      @media (max-width: 1024px) {
+        .company-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 28px;
+        }
+
+        .company-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .company-item {
+          padding: 20px;
+        }
+
+        .company-item img {
+          max-width: 120px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .company-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .company-item img {
+          max-width: 100px;
+        }
+      }
+    </style>
+
+    <br><br>
+
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container my-5">
+          <div class="row g-5 d-flex align-items-stretch">
+
+            <!-- Left Column: Text Content -->
+            <div class="col-lg-6 d-flex">
+              <div class="about-content d-flex flex-column justify-content-center h-100 w-100" data-aos="fade-right"
+                data-aos-delay="200">
+
+                <h1 style="font-size: 50px; color: #2d6294;">
+                  <span style="color:#e42020;">About </span>Sakthi Property
+                </h1>
+
+                <p class="lead">
+                  Sakthi Property, part of the esteemed Sakthi Group, has been a
+                  <span class="highlight">trusted name in Chennai's real estate sector for over 20 years</span>.
+                  We are celebrated for <span class="highlight">unwavering commitment to quality</span>,
+                  <span class="highlight">on-time project delivery</span>, and
+                  <span class="highlight">architecturally splendid homes</span>
+                  that harmonize with their surroundings.
+                  With a <span class="highlight">customer-friendly approach and transparency</span>,
+                  we have proudly served <span class="highlight">over 1,00,000 happy customers</span>,
+                  offering <span class="highlight">premium-quality residences</span> tailored to diverse lifestyles.
+                </p>
+
+                <p class="lead">
+                  Established in 1984, the Sakthi Group has grown into a versatile conglomerate spanning steel,
+                  logistics, and industrial parks.
+                  Under the leadership of Mr. K.A. Anand, we prioritize
+                  <span class="highlight">innovation, sustainability, and reliability</span>.
+                  All our projects are <span class="highlight">RERA-approved</span>, ensuring
+                  <span class="highlight">secure and reliable investments</span>.
+                  Our brands like <span class="highlight">SSI TMT</span> and
+                  <span class="highlight">Sri Durga TMT</span> set industry benchmarks with
+                  <span class="highlight">cutting-edge manufacturing and rich standards of excellence</span>.
+                </p>
+
+              </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="col-lg-6 d-flex">
+              <div class="position-relative pump-animation h-100 w-100 d-flex align-items-center" data-aos="fade-left"
+                data-aos-delay="200">
+                <img src="assets/img/projects/building.webp" alt="Construction Team"
+                  class="img-fluid main-image rounded w-100 h-100 object-fit-cover">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+
+
+
+    <div class="container section-title" style="text-align: center;">
+      <span class="comTitle">Chairman’s <span>&amp; Statement</span></span>
+      <div class="beopenPart">
+        <p>Our Chairman envisions creating timeless living spaces built on trust, innovation, and unmatched quality.</p>
+      </div>
+    </div>
+
+    <section class="container image-text-section">
+      <div class="text-overlay">
+        <p>At Sakthi Group of Companies, our mission is to build lasting value for our customers, our communities, and
+          our future. We are committed to delivering high-quality residential and commercial spaces, backed by
+          professional management, timely execution, and a strong focus on customer satisfaction. Transparency and trust
+          are the cornerstones of our approach. By setting clear expectations and upholding integrity in every
+          interaction, we aim to build not just structures, but strong relationships.</p>
+        <span style="font-weight:700;">Ka Anandh, Chairman Cum Managing Director, Sakthi Group of Companies.</span>
+      </div>
+
+      <img src="./assets/img/charmen.jpg" height="100%" width="100%" alt="Image" style="border-radius: 20px;" />
+    </section>
+
+
+
+
+    <section class="company-section">
+      <div class="container section-title" style="text-align: center;">
+        <span class="comTitle">Our Group <span>of Companies</span></span>
+        <div class="beopenPart">
+          <p>A diversified group of companies committed to quality, innovation, and sustainable growth across all our
+            ventures.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="company-grid">
+          <!-- Company Item -->
+          <div class="company-item">
+            <img src="assets/img/groups/Sakthi-Group.svg" alt="Company 1" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/Sakthi-Renewable-Energy.svg" alt="Company 2" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/SFS.svg" alt="Company 3" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/SIP.svg" alt="Company 4" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/SME-Intellect.svg" alt="Company 5" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/Sri-Durga.svg" alt="Company 6" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/SSI-Gold-House.svg" alt="Company 7" />
+          </div>
+
+          <div class="company-item">
+            <img src="assets/img/groups/SSI-TMT-Bars.svg" alt="Company 8" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="vision-section" style="background-image: url('/assets/img/2151020006.webp');
+                background-size: cover;
+                background-position: center;
+                padding: 100px 0;
+                backdrop-filter: blur(1px);
+">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="massive-card text-center p-5">
+              <i class="bi bi-eye-fill massive-icon"></i>
+              <h3 class="fw-bold mt-3 massive-title">Vision</h3>
+              <p class="massive-text">To develop best in class homes at soothing locations for people to enjoy a
+                tranquil living.</p>
+            </div>
+          </div>
+
+          <!-- Mission -->
+          <div class="col-md-4 mb-4">
+            <div class="massive-card text-center p-5">
+              <i class="bi bi-bullseye massive-icon"></i>
+              <h3 class="fw-bold mt-3 massive-title">Mission</h3>
+              <p class="massive-text">Making housing accessible through affordable and luxury homes at reasonable
+                prices.</p>
+            </div>
+          </div>
+
+          <!-- Goal -->
+          <div class="col-md-4 mb-4">
+            <div class="massive-card text-center p-5">
+              <i class="bi bi-flag-fill massive-icon"></i>
+              <h3 class="fw-bold mt-3 massive-title">Goal</h3>
+              <p class="massive-text">To ardently follow best construction practices that are followed across the globe.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container section-title" style="text-align: center;">
+        <span class="comTitle">Frequently<span> Asked Questions</span></span>
+      </div>
+
+      <div class="faq-container">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is Sakthi Group known for?
+            <span class="arrow">&#9656;</span>
+          </button>
+          <div class="faq-answer">
+            Sakthi Group, established in 1984, is a diversified conglomerate operating across steel, logistics,
+            construction, and industrial parks.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What makes Sakthi Property unique?
+            <span class="arrow">&#9656;</span>
+          </button>
+          <div class="faq-answer">
+            Sakthi Property builds “living experiences” with premium amenities, thoughtful design, and sustainable
+            development for vibrant neighbourhoods.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the mission of Sakthi Property?
+            <span class="arrow">&#9656;</span>
+          </button>
+          <div class="faq-answer">
+            Our mission is to transform construction, enhance communities, and improve lives through innovation and
+            responsible development.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Which regions does Sakthi Property serve?
+            <span class="arrow">&#9656;</span>
+          </button>
+          <div class="faq-answer">
+            We proudly serve communities across South India, building impactful residential and industrial developments.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What values does your team follow?
+            <span class="arrow">&#9656;</span>
+          </button>
+          <div class="faq-answer">
+            Our team is respectful, fact-driven, nimble, and committed to meaningful relationships and mindful
+            stewardship.
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+  </main>
+
+
+  <footer id="footer" class="footer" style="background-color: #d8ff6d;">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="/assets/img/logo.png">
+          </a>
+          <p>Sakthi Group a name built on passion, innovation, and unwavering commitment has been an industry leader
+            since 1984.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.facebook.com/sakthipropertychennai"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/sakthi._property?igsh=MW5qbG5kZmpzeTBvMg=="><i
+                class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>USEFUL LINKS</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="service-details.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>OUR SERVICES</h4>
+          <ul>
+            <li><a href="#">Residential Apartments</a></li>
+            <li><a href="#">Residential Plots</a></li>
+            <li><a href="#">Farm Lands</a></li>
+            <li><a href="#">Architectural Design</a></li>
+            <li><a href="#">Project Management</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 footer-contact text-md-start">
+          <h4>HEAD OFFICE</h4>
+          <p>1st Floor, 18/36, Karpagambal Nagar,<br>Mylapore, Chennai-600004</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+91 99551-18814</span></p>
+          <p><strong>Email:</strong> <span>sales@sakthiproperty.com</span><br><span
+              style="margin-left: 47px;">admin@sakthiproperty.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center ">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Sakthi Group</strong>|<span> All Rights Reserved</span>
+        | Designed by <strong class="px-1 sitename"><a style="color: rgb(37, 36, 36);" href="#">DLK Technologies Pvt
+            Ltd</a></strong>
+      </p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919955118814" class="whatsapp-float-left" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <script>
+    const items = document.querySelectorAll('.faq-item');
+
+    items.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- <script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("mainNavbar");
+
+    window.addEventListener("scroll", () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script> -->
+
+  <script>
+    // Grab elements
+    const overlayNav = document.getElementById('navSection');
+    const burgerBtn = document.querySelector('.open-overlay');
+    const backdrop = document.getElementById('menuBackdrop');
+
+    // Function to open overlay
+    function openOverlay() {
+      overlayNav.classList.add('overlay-slide-down');
+      overlayNav.classList.remove('overlay-slide-up');
+      burgerBtn.classList.add('active');
+      backdrop.classList.add('active');
+    }
+
+    // Function to close overlay
+    function closeOverlay() {
+      overlayNav.classList.remove('overlay-slide-down');
+      overlayNav.classList.add('overlay-slide-up');
+      burgerBtn.classList.remove('active');
+      backdrop.classList.remove('active');
+    }
+
+    // Toggle overlay on burger click
+    burgerBtn.addEventListener('click', () => {
+      if (overlayNav.classList.contains('overlay-slide-down')) {
+        closeOverlay();
+      } else {
+        openOverlay();
+      }
+    });
+
+    // Close overlay when clicking on backdrop
+    backdrop.addEventListener('click', closeOverlay);
+
+    // Optional: close overlay when clicking a nav link
+    overlayNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeOverlay);
+    });
+  </script>
+
+</body>
+
+</html>

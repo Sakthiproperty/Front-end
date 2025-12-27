@@ -1,0 +1,644 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,300,700|Open+Sans:400italic,300italic);
+
+
+
+/* ====================================
+Navigation 
+==================================== */
+
+/* .overlay-navigation {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    transform: translateY(-100%);
+} */
+
+.overlay-navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60vw;              /* ✅ 20% of viewport */
+    max-width: 320px;         /* optional – looks good on big screens */
+    height: 100vh;
+    z-index: 9999;
+    background-color: rgba(56, 56, 56, 0.95);
+    transform: translateX(100%);  /* hidden to the right */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+.overlay-slide-down {
+    transform: translateX(0);
+}
+
+.overlay-slide-up {
+    transform: translateX(100%);
+}
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 9000;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+nav,
+nav ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;   /* ✅ VERTICAL STACK */
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+
+.overlay-navigation nav ul li {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+     opacity: 0;
+    transform: translateX(50px);
+    animation: slide-in-nav-item 0.4s linear both;
+}
+.overlay-slide-down nav ul li {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.overlay-slide-up nav ul li {
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+
+
+nav li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Work sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+nav li a:before {
+    content: '';
+    width: 70px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+nav li a:after {
+    content: attr(data-content);
+    font-size: 0.7rem;
+    transition: all .2s linear;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    color: #fff;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    text-transform: none;
+    font-family: 'Open sans', serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0;
+}
+
+
+nav li a:hover {
+    transform: translateY(-5px) scale(1.05);
+    opacity: 1;
+    color: rgb(245, 218, 218);
+
+   
+}
+
+
+nav li {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+
+    /* margin-left: 300px; */
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+
+.nav-links a {
+    font-size: 20px;
+    /* Increased text size */
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.nav-links.scrolled a {
+    color: black; /* color after scrolling */
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+    color: #2d6294;
+}
+
+/* stagger delay */
+.overlay-navigation nav ul li:nth-child(1) { animation-delay: 0.2s; }
+.overlay-navigation nav ul li:nth-child(2) { animation-delay: 0.4s; }
+.overlay-navigation nav ul li:nth-child(3) { animation-delay: 0.6s; }
+.overlay-navigation nav ul li:nth-child(4) { animation-delay: 0.8s; }
+.overlay-navigation nav ul li:nth-child(5) { animation-delay: 1s; }
+.overlay-navigation nav ul li:nth-child(6) { animation-delay: 1.2s; }
+.overlay-navigation nav ul li:nth-child(7) { animation-delay: 1.4s; }
+
+
+@keyframes slide-in-nav-item {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ====================================
+Burger king
+==================================== */
+
+.open-overlay {
+    position: fixed;
+    /* FIXES THE BUTTON */
+    top: 30px;
+    /* Position from top */
+    right: 40px;
+    /* Position from right */
+    z-index: 110000;
+    /* Must be above overlay */
+    width: 34px;
+    cursor: pointer;
+}
+
+
+/* Default burger line color */
+.open-overlay span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    /* default white */
+    margin: 6px 0;
+    transition: 0.3s ease;
+    color: #000000;
+}
+
+/* On scroll → change to black */
+.open-overlay span.bar-dark {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    /* black color */
+}
+
+.animate-top-bar {
+    animation: animate-top-bar .6s linear 1 both
+}
+
+.animate-bottom-bar {
+    animation: animate-bottom-bar .6s linear 1 both
+}
+
+.animate-middle-bar {
+    animation: animate-middle-bar .6s linear 1 both
+}
+
+.animate-out-top-bar {
+    animation: animate-out-top-bar .6s linear 1 both
+}
+
+.animate-out-bottom-bar {
+    animation: animate-out-bottom-bar .6s linear 1 both
+}
+
+.animate-out-middle-bar {
+    animation: animate-out-middle-bar .6s linear 1 both
+}
+
+/* Make the X bars white */
+.open-overlay.active .bar-top,
+.open-overlay.active .bar-bottom {
+    background-color: #fff;
+}
+
+.open-overlay.active .bar-middle {
+    background-color: #ffffff; /* optional, middle is hidden anyway */
+}
+
+/* ====================================
+Animation keyframes
+==================================== */
+
+@keyframes slide-in-nav-item {
+    from {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes slide-in-nav-item-reverse {
+    from {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    to {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+}
+
+@keyframes animate-top-bar {
+    0% {
+        background-color: black;
+    }
+
+    50% {
+        -webkit-transform: translateY(9px);
+        transform: translateY(9px)
+    }
+
+    80% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+        background-color: black
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: black
+    }
+}
+
+@keyframes animate-bottom-bar {
+    0% {
+        background-color: black;
+    }
+
+    50% {
+        -webkit-transform: translateY(-9px);
+        transform: translateY(-9px)
+    }
+
+    80% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        background-color: black;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: black;
+    }
+}
+
+@keyframes animate-middle-bar {
+    0% {
+        background-color: black;
+    }
+
+    80% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+@keyframes animate-out-top-bar {
+    0% {
+        background-color: black
+    }
+
+    50% {
+        -webkit-transform: translateY(9px);
+        transform: translateY(9px)
+    }
+
+    80% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+        background-color: black
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: black;
+    }
+}
+
+@keyframes animate-out-bottom-bar {
+    0% {
+        background-color: black
+    }
+
+    50% {
+        -webkit-transform: translateY(-9px);
+        transform: translateY(-9px)
+    }
+
+    80% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        background-color: black;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: black;
+    }
+}
+
+@keyframes animate-out-middle-bar {
+    0% {
+        background-color: black
+    }
+
+    80% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+
+@media (max-width: 640px) {
+    nav ul li a {
+        font-size: 11px;
+    }
+
+    nav li a:after {
+        font-size: 0.6rem;
+    }
+
+    .open-overlay {
+        right: 1rem;
+    }
+
+    nav li a:before {
+        width: 15px;
+    }
+}
+
+.nav-logo-overlay {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    /* change to center if needed */
+    z-index: 200;
+}
+
+.nav-logo-overlay img {
+    width: 120px;
+    /* adjust size */
+    height: auto;
+}
+
+
+.nav-logo {
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    z-index: 200;
+    text-decoration: none;
+    /* optional */
+}
+
+.nav-logo img {
+    width: 120px;
+    /* Adjust logo size */
+    height: auto;
+    display: block;
+}
+
+/* Transform burger to X */
+.open-overlay.active .bar-top {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.open-overlay.active .bar-middle {
+    opacity: 0; /* hide middle line */
+}
+
+.open-overlay.active .bar-bottom {
+    transform: rotate(-45deg) translate(7px, -7px);
+    color: #000000;
+}
+
+
+
+/* Default navbar state */
+#mainNavbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    justify-content: center;
+    padding: 0 40px;
+    z-index: 200;
+    background: transparent;
+    transition: transform 0.35s ease, background 0.3s ease;
+}
+
+/* Background color on scroll */
+#mainNavbar.scrolled {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo animation */
+#navbarLogo {
+    transition: 0.3s ease;
+}
+ 
+/* NAV ITEM */
+.nav-item {
+    position: relative;
+}
+
+/* -----------------------------
+   DROPDOWN – MATCHED TO REFERENCE
+----------------------------- */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(10px);
+    min-width: 180px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 9999;
+}
+
+/* DROPDOWN LINKS */
+.dropdown a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #2d6294;
+    /* text-decoration: none; */
+    padding: 8px 16px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Underline animation (REFERENCE STYLE) */
+.dropdown a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0%;
+    height: 2px;
+    background-color: #2d6294;
+    transition: width 0.3s ease;
+}
+
+/* Hover effect */
+.dropdown a:hover {
+    color: #2d6294;
+    transform: translateX(5px);
+}
+
+.dropdown a:hover::after {
+    width: 94%;
+}
+
+/* SHOW DROPDOWN */
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown inner */
+.dropdown-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 180px;
+}
+
+/* MAIN NAV LINK */
+.nav-item > a {
+    position: relative;
+    padding-right: 22px;
+}
+
+/* TRIANGLE ICON */
+.nav-item > a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #ffffff;
+    transition: transform 0.3s ease, border-top-color 0.3s ease;
+}
+
+.nav-item:hover > a::after {
+    transform: translateY(-50%) rotate(360deg);
+    border-top-color: #e42020;
+}
+
+/* Hide navbar on scroll down */
+#mainNavbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* Triangle color after scroll */
+#mainNavbar.scrolled .nav-item > a::after {
+    border-top-color: black;
+}
+#mainNavbar.scrolled .nav-links > .nav-item > a {
+  color: black;
+}
