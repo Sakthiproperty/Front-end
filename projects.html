@@ -418,48 +418,47 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const filterButtons = document.querySelectorAll(".city-tab");
-      const projectItems = document.querySelectorAll(".uni-project-card");
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".city-tab");
+    const projectItems = document.querySelectorAll(".uni-project-card");
 
-      function applyFilter(city) {
-        // Active button
-        filterButtons.forEach(btn => {
-          btn.classList.toggle(
-            "active",
-            btn.getAttribute("data-city") === city || (city === "all" && btn.getAttribute("data-city") === "all")
-          );
-        });
-
-        // Project filtering
-        projectItems.forEach(item => {
-          const itemCity = item.getAttribute("data-location");
-
-          if (city === "all" || itemCity === city) {
-            item.classList.remove("hidden");
-          } else {
-            item.classList.add("hidden");
-          }
-        });
-      }
-
-      // Button click
+    function applyFilter(city) {
       filterButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          applyFilter(btn.getAttribute("data-city"));
-        });
+        btn.classList.toggle(
+          "active",
+          btn.getAttribute("data-city") === city || (city === "all" && btn.getAttribute("data-city") === "all")
+        );
       });
 
-      // URL filter (projects.html?city=Bengaluru)
-      const params = new URLSearchParams(window.location.search);
-      const cityFromURL = params.get("city");
+      projectItems.forEach(item => {
+        const itemCity = item.getAttribute("data-location");
+        item.classList.toggle("hidden", city !== "all" && itemCity !== city);
+      });
+    }
 
-      if (cityFromURL) {
-        applyFilter(cityFromURL);
-      }
+    // Read URL parameter
+    const params = new URLSearchParams(window.location.search);
+    const cityFromURL = params.get("city");
+
+    if (cityFromURL) {
+      applyFilter(cityFromURL);
+
+      // ✅ REMOVE ?city=Bengaluru from URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // Button click filter
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyFilter(btn.getAttribute("data-city"));
+      });
     });
-  </script>
+  });
+</script>
+
 
 
 
