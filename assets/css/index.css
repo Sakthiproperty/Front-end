@@ -24480,18 +24480,12 @@ img {
 .enquiry-side-btn:hover {
   background: gray;
   color: #ffffff;
-
-
 }
 
 
 .enquiry-wrapper:hover .enquiry-side-btn {
   transform: rotate(-90deg) translateX(10px);
 }
-
-
-
-
 
 
 
@@ -24504,6 +24498,7 @@ img {
   -webkit-text-fill-color: transparent;
   margin-bottom: 14px;
 }
+
 
 .newsletterSection {
   padding: 16% 0 5%;
@@ -24582,7 +24577,6 @@ img {
 
 /* Popup overlay */
 .brochure-popup {
-  top: 20px;
   display: none;
   position: fixed;
   z-index: 9999;
@@ -24597,6 +24591,7 @@ img {
 
 /* Popup content */
 .brochure-content {
+  top: 20px;
   width: 100%;
   max-width: 1000px;
   position: relative;
@@ -24630,6 +24625,7 @@ img {
 
 /* Carousel images */
 .brochure-content img {
+  
   width: 100%;
   height: auto;
   border-radius: 0; /* optional, match popup edges */
@@ -24655,8 +24651,6 @@ img {
     line-height: 30px;
   }
 }
-
-
 
 .whatsapp-float-left {
   position: fixed;

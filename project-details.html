@@ -50,7 +50,9 @@
       <ul>
         <li><a href="index.html">HOME</a></li>
         <li><a href="about.html">ABOUT</a></li>
+        <li><a href="what_we_do.html">What We Do</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="comming_soon.html">Comming Soon</a></li>
         <li><a href="service-details.html">SERVICES</a></li>
         <li><a href="blog-list.html">BLOGS</a></li>
         <li><a href="career.html">CAREER</a></li>
@@ -60,50 +62,53 @@
     </nav>
   </div>
 
-  <section class="home" id="mainNavbar">
-    <!-- LOGO -->
-    <a href="index.html" class="nav-logo">
-      <img id="navbarLogo" src="/assets/img/logo.png" alt="Logo">
-    </a>
+    <section class="home" id="mainNavbar">
+      <!-- LOGO -->
+      <a href="index.html" class="nav-logo">
+        <img id="navbarLogo" src="/assets/img/logo.png" alt="Logo">
+      </a>
 
-    <!-- NAV LINKS -->
-    <div class="nav-links">
+      <!-- NAV LINKS -->
+      <div class="nav-links">
 
-      <div class="nav-item">
-        <a href="projects.html">Apartments</a>
-        <div class="dropdown">
-          <div class="dropdown-inner">
+        <div class="nav-item">
+          <a href="projects.html">Apartments</a>
+          <div class="dropdown">
+            <div class="dropdown-inner">
 
-            <a href="projects.html">Bangalore</a>
+              <a href="projects.html?city=Bengaluru">Bangalore</a>
+
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="nav-item">
-        <a href="projects.html">Plots</a>
-        <div class="dropdown">
-          <a href="projects.html">Thiruvallur</a>
+        <div class="nav-item">
+          <a href="projects.html">Plots</a>
+          <div class="dropdown">
+            <a href="projects.html?city=Thiruvallur">Thiruvallur</a>
+
+          </div>
         </div>
-      </div>
 
-      <div class="nav-item">
-        <a href="projects.html">Farm Lands</a>
-        <div class="dropdown">
-          <a href="#">Upcoming</a>
+        <div class="nav-item">
+          <a href="projects.html">Farm Lands</a>
+          <div class="dropdown">
+            <a href="projects.html?city=Yercaud">Yercaud</a>
+
+          </div>
         </div>
+
       </div>
 
-    </div>
 
+      <!-- BURGER ICON -->
+      <div class="open-overlay" id="burger">
+        <span class="bar-top"></span>
+        <span class="bar-middle"></span>
+        <span class="bar-bottom"></span>
+      </div>
 
-    <!-- BURGER ICON -->
-    <div class="open-overlay">
-      <span class="bar-top"></span>
-      <span class="bar-middle"></span>
-      <span class="bar-bottom"></span>
-    </div>
-
-  </section>
+    </section>
   <div class="menu-backdrop" id="menuBackdrop"></div>
 
 
@@ -726,23 +731,27 @@
         <p>Dedicated to preserving and enhancing environmental harmony</p>
       </div>
     </div>
-    <section class="sustainable-section" style="background-image: url(/assets/img/green1.jpg);background-repeat: no-repeat;background-size: cover;">
+    <section class="sustainable-section"
+      style="background-image: url(/assets/img/green1.jpg);background-repeat: no-repeat;background-size: cover;">
       <div class="sustain-content">
         <div class="sustain-cards">
           <div class="s-card">
-            <p><b>Environment</b><br>We are committed to safeguarding the environment across all our operations, striving not only to
+            <p><b>Environment</b><br>We are committed to safeguarding the environment across all our operations,
+              striving not only to
               protect it but also to enrich its overall quality.</p>
           </div>
 
           <div class="s-card">
 
-            <p><b>Social</b><br>We work to promote the well-being and development of all stakeholders connected to our business,
+            <p><b>Social</b><br>We work to promote the well-being and development of all stakeholders connected to our
+              business,
               whether their association is direct or indirect.</p>
           </div>
 
           <div class="s-card">
 
-            <p><b>Governance</b><br>We uphold ethical leadership that protects the interests of every stakeholder by consistently
+            <p><b>Governance</b><br>We uphold ethical leadership that protects the interests of every stakeholder by
+              consistently
               adhering to our foundational values.</p>
           </div>
         </div>
@@ -760,7 +769,7 @@
         font-weight: 600;
         margin-bottom: 20px;
       }
- 
+
 
       /* Cards container */
       .sustain-cards {

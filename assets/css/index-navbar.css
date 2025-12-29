@@ -21,12 +21,15 @@ Navigation
     position: fixed;
     top: 0;
     right: 0;
-    width: 60vw;              /* ✅ 20% of viewport */
-    max-width: 320px;         /* optional – looks good on big screens */
+    width: 60vw;
+    /* ✅ 20% of viewport */
+    max-width: 320px;
+    /* optional – looks good on big screens */
     height: 100vh;
     z-index: 9999;
     background-color: rgba(56, 56, 56, 0.95);
-    transform: translateX(100%);  /* hidden to the right */
+    transform: translateX(100%);
+    /* hidden to the right */
     transition: transform 0.4s ease-in-out;
 }
 
@@ -38,13 +41,14 @@ Navigation
 .overlay-slide-up {
     transform: translateX(100%);
 }
+
 .menu-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
@@ -68,7 +72,8 @@ nav ul {
 
 nav ul {
     display: flex;
-    flex-direction: column;   /* ✅ VERTICAL STACK */
+    flex-direction: column;
+    /* ✅ VERTICAL STACK */
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -80,10 +85,11 @@ nav ul {
     padding: 10px 0;
     text-align: center;
     overflow: hidden;
-     opacity: 0;
+    opacity: 0;
     transform: translateX(50px);
     animation: slide-in-nav-item 0.4s linear both;
 }
+
 .overlay-slide-down nav ul li {
     transform: translateX(0);
     opacity: 1;
@@ -150,8 +156,34 @@ nav li a:hover {
     transform: translateY(-5px) scale(1.05);
     opacity: 1;
     color: rgb(245, 218, 218);
+}
 
-   
+/* Coming Soon – smooth floating animation */
+nav li a.coming-soon {
+  position: relative;
+  display: inline-block;      /* required */
+  color: #f5c87a;
+  font-weight: 600;
+  animation: comingSoonSmooth 3.2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+/* Smooth up–down keyframes */
+@keyframes comingSoonSmooth {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);   /* subtle movement */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Override global hover effect */
+nav li a.coming-soon:hover {
+  transform: translateY(0);
+  animation-play-state: paused;   /* optional but premium */
 }
 
 
@@ -168,9 +200,9 @@ nav li {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
+    .nav-links {
+        display: none;
+    }
 }
 
 
@@ -183,8 +215,10 @@ nav li {
     transition: 0.3s;
     margin-top: 10px;
 }
+
 .nav-links.scrolled a {
-    color: black; /* color after scrolling */
+    color: black;
+    /* color after scrolling */
 }
 
 .nav-links a:hover {
@@ -193,13 +227,33 @@ nav li {
 }
 
 /* stagger delay */
-.overlay-navigation nav ul li:nth-child(1) { animation-delay: 0.2s; }
-.overlay-navigation nav ul li:nth-child(2) { animation-delay: 0.4s; }
-.overlay-navigation nav ul li:nth-child(3) { animation-delay: 0.6s; }
-.overlay-navigation nav ul li:nth-child(4) { animation-delay: 0.8s; }
-.overlay-navigation nav ul li:nth-child(5) { animation-delay: 1s; }
-.overlay-navigation nav ul li:nth-child(6) { animation-delay: 1.2s; }
-.overlay-navigation nav ul li:nth-child(7) { animation-delay: 1.4s; }
+.overlay-navigation nav ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.overlay-navigation nav ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.overlay-navigation nav ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.overlay-navigation nav ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.overlay-navigation nav ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.overlay-navigation nav ul li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.overlay-navigation nav ul li:nth-child(7) {
+    animation-delay: 1.4s;
+}
 
 
 @keyframes slide-in-nav-item {
@@ -207,6 +261,7 @@ nav li {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -282,7 +337,8 @@ Burger king
 }
 
 .open-overlay.active .bar-middle {
-    background-color: #ffffff; /* optional, middle is hidden anyway */
+    background-color: #ffffff;
+    /* optional, middle is hidden anyway */
 }
 
 /* ====================================
@@ -489,7 +545,8 @@ Animation keyframes
 }
 
 .open-overlay.active .bar-middle {
-    opacity: 0; /* hide middle line */
+    opacity: 0;
+    /* hide middle line */
 }
 
 .open-overlay.active .bar-bottom {
@@ -525,7 +582,7 @@ Animation keyframes
 #navbarLogo {
     transition: 0.3s ease;
 }
- 
+
 /* NAV ITEM */
 .nav-item {
     position: relative;
@@ -605,13 +662,13 @@ Animation keyframes
 }
 
 /* MAIN NAV LINK */
-.nav-item > a {
+.nav-item>a {
     position: relative;
     padding-right: 22px;
 }
 
 /* TRIANGLE ICON */
-.nav-item > a::after {
+.nav-item>a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -625,7 +682,7 @@ Animation keyframes
     transition: transform 0.3s ease, border-top-color 0.3s ease;
 }
 
-.nav-item:hover > a::after {
+.nav-item:hover>a::after {
     transform: translateY(-50%) rotate(360deg);
     border-top-color: #e42020;
 }
@@ -636,9 +693,10 @@ Animation keyframes
 }
 
 /* Triangle color after scroll */
-#mainNavbar.scrolled .nav-item > a::after {
+#mainNavbar.scrolled .nav-item>a::after {
     border-top-color: black;
 }
-#mainNavbar.scrolled .nav-links > .nav-item > a {
-  color: black;
+
+#mainNavbar.scrolled .nav-links>.nav-item>a {
+    color: black;
 }

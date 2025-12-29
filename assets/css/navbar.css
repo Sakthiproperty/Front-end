@@ -65,6 +65,9 @@ nav ul li {
     opacity: 0;
 }
 
+
+
+
 nav li a {
     color: #fff;
     text-transform: uppercase;
@@ -119,6 +122,9 @@ nav li a:hover {
     color: rgb(245, 218, 218);
     opacity: 1;
 }
+
+
+
 
 /* ================= Nav Links ================= */
 .nav-links {
